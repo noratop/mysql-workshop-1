@@ -1,0 +1,96 @@
+mysql> CREATE DATABASE Hotel;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE Hotel;
+Database changed
+mysql> CREATE TABLE Floor (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Room (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE TABLE Booking (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ALTER TABLE Floor ADD COLUMN Number INT;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN FloorId INT;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN nbPeopleAccepted INT;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN nbWindow INT;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN isRentable TINYINT;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN hasPrivateKitchen TINYINT;                                                                  
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN carpeted TINYINT;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Booking ADD COLUMN RoomID INT;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Booking ADD COLUMN startDate DATE;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Booking ADD COLUMN endDate DATE;                                                                            
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Floor;
++--------+---------+------+-----+---------+----------------+
+| Field  | Type    | Null | Key | Default | Extra          |
++--------+---------+------+-----+---------+----------------+
+| id     | int(11) | NO   | PRI | NULL    | auto_increment |
+| Number | int(11) | YES  |     | NULL    |                |
++--------+---------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> DESCRIBE Room;
++-------------------+------------+------+-----+---------+----------------+
+| Field             | Type       | Null | Key | Default | Extra          |
++-------------------+------------+------+-----+---------+----------------+
+| id                | int(11)    | NO   | PRI | NULL    | auto_increment |
+| FloorId           | int(11)    | YES  |     | NULL    |                |
+| nbPeopleAccepted  | int(11)    | YES  |     | NULL    |                |
+| nbWindow          | int(11)    | YES  |     | NULL    |                |
+| isRentable        | tinyint(4) | YES  |     | NULL    |                |
+| hasPrivateKitchen | tinyint(4) | YES  |     | NULL    |                |
+| carpeted          | tinyint(4) | YES  |     | NULL    |                |
++-------------------+------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> DESCRIBE Booking;
++-----------+---------+------+-----+---------+----------------+
+| Field     | Type    | Null | Key | Default | Extra          |
++-----------+---------+------+-----+---------+----------------+
+| id        | int(11) | NO   | PRI | NULL    | auto_increment |
+| RoomID    | int(11) | YES  |     | NULL    |                |
+| startDate | date    | YES  |     | NULL    |                |
+| endDate   | date    | YES  |     | NULL    |                |
++-----------+---------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
