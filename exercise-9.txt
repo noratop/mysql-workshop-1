@@ -1,0 +1,46 @@
+mysql> CREATE DATABASE Barn;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use Barn;
+Database changed
+mysql> CREATE TABLE Chicken (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> ALTER TABLE Chicken ADD COLUMN type ENUM('rooster','hen','chicks');
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken ADD COLUMN comeInOn DATETIME;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken ADD COLUMN goneOutOn DATETIME;                                                                 
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken ADD COLUMN comeToAgeOn DATETIME;                                                             
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Chicken;
++-------------+--------------------------------+------+-----+---------+----------------+
+| Field       | Type                           | Null | Key | Default | Extra          |
++-------------+--------------------------------+------+-----+---------+----------------+
+| id          | int(11)                        | NO   | PRI | NULL    | auto_increment |
+| type        | enum('rooster','hen','chicks') | YES  |     | NULL    |                |
+| comeInOn    | datetime                       | YES  |     | NULL    |                |
+| goneOutOn   | datetime                       | YES  |     | NULL    |                |
+| comeToAgeOn | datetime                       | YES  |     | NULL    |                |
++-------------+--------------------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
++----------------+
+| Tables_in_Barn |
++----------------+
+| Chicken        |
++----------------+
+1 row in set (0.00 sec)
