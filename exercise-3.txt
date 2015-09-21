@@ -1,0 +1,17 @@
+mysql> SHOW DATABASES;
++-----------------------+
+| Database              |
++-----------------------+
+| information_schema    |
+| World                 |
+| c9                    |
+| decodemtl_addressbook |
+| decodemtl_test        |
+| mysql                 |
+| performance_schema    |
++-----------------------+
+7 rows in set (0.00 sec)
+
+mysql> DROP DATABASE decodemtl_test;
+Query OK, 0 rows affected (0.00 sec)
+
