@@ -1,0 +1,28 @@
+mysql> CREATE TABLE Account (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.00 sec)
+
+
+mysql> CREATE TABLE AddressBook (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> CREATE TABLE Entry (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> CREATE TABLE Test (
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
