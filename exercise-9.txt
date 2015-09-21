@@ -44,3 +44,43 @@ mysql> SHOW TABLES;
 | Chicken        |
 +----------------+
 1 row in set (0.00 sec)
+
+
+________________________________________________________________________________________
+Changes after comments
+________________________________________________________________________________________
+
+mysql> DESCRIBE Chicken;
++-------------+--------------------------------+------+-----+---------+----------------+
+| Field       | Type                           | Null | Key | Default | Extra          |
++-------------+--------------------------------+------+-----+---------+----------------+
+| id          | int(11)                        | NO   | PRI | NULL    | auto_increment |
+| type        | enum('rooster','hen','chicks') | YES  |     | NULL    |                |
+| comeInOn    | datetime                       | YES  |     | NULL    |                |
+| goneOutOn   | datetime                       | YES  |     | NULL    |                |
+| comeToAgeOn | datetime                       | YES  |     | NULL    |                |
++-------------+--------------------------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> ALTER TABLE Chicken DROP COLUMN comeInOn;
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken DROP COLUMN goneOutOn;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken ADD COLUMN isAlive TINYINT;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Chicken;
++-------------+--------------------------------+------+-----+---------+----------------+
+| Field       | Type                           | Null | Key | Default | Extra          |
++-------------+--------------------------------+------+-----+---------+----------------+
+| id          | int(11)                        | NO   | PRI | NULL    | auto_increment |
+| type        | enum('rooster','hen','chicks') | YES  |     | NULL    |                |
+| comeToAgeOn | datetime                       | YES  |     | NULL    |                |
+| isAlive     | tinyint(4)                     | YES  |     | NULL    |                |
++-------------+--------------------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
