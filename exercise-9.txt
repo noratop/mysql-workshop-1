@@ -84,3 +84,25 @@ mysql> DESCRIBE Chicken;
 | isAlive     | tinyint(4)                     | YES  |     | NULL    |                |
 +-------------+--------------------------------+------+-----+---------+----------------+
 4 rows in set (0.00 sec)
+
+
+
+________________________________________________________________________________________
+Changes after comments
+________________________________________________________________________________________
+
+mysql> ALTER TABLE Chicken ADD COLUMN sex ENUM('male','female');
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Chicken;
++-------------+--------------------------------+------+-----+---------+----------------+
+| Field       | Type                           | Null | Key | Default | Extra          |
++-------------+--------------------------------+------+-----+---------+----------------+
+| id          | int(11)                        | NO   | PRI | NULL    | auto_increment |
+| type        | enum('rooster','hen','chicks') | YES  |     | NULL    |                |
+| comeToAgeOn | datetime                       | YES  |     | NULL    |                |
+| isAlive     | tinyint(4)                     | YES  |     | NULL    |                |
+| sex         | enum('male','female')          | YES  |     | NULL    |                |
++-------------+--------------------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
